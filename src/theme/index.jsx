@@ -89,7 +89,7 @@ const darkTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#00A6ED",          
+          backgroundColor: "#00A6ED",
           color: "#FFFFFF",
           borderRadius: "0.625rem",
           boxShadow: "0px 0px 12.439px 0px rgba(0, 0, 0, 0.25)",
@@ -100,9 +100,23 @@ const darkTheme = createTheme({
           lineHeight: "normal",
           letterSpacing: "0.10938rem",
           textTransform: "none",
-          "&:hover":{
-            backgroundColor: "#0D1F66",
+          "&:hover": {
+            backgroundColor: "#0D1F66"
           }
+        }
+      }
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "#FFFFFF",
+          fontFamily: "Poppins",
+          fontSize: "1.25rem",
+          fontStyle: "normal",
+          fontWeight: "500",
+          lineHeight: "normal",
+          letterSpacing: "0.0625rem",
+          textDecoration: "none"
         }
       }
     }
