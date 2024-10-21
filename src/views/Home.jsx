@@ -92,7 +92,7 @@ const Home = () => {
               width: "10.625rem",
               height: "3.125rem",
               display: "flex",
-              justifyContent: "center", // Centrar horizontalmente
+              justifyContent: "center", 
               alignItems: "center",
               backgroundColor: "#00A6ED",
               color: "#FFFFFF",
