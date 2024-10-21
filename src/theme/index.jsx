@@ -6,11 +6,11 @@ const darkTheme = createTheme({
     primary: {
       main: "#0D1F66",
       light: "#00A6ED",
-      dark: "0D3B66"
+      dark: "#0D3B66"
     },
     background: {
-      default: "#04104D",
-      paper: "04104D"
+      default: "#050E3B",
+      paper: "#050E3B"
     },
     text: {
       primary: "#FFFFFF",
@@ -34,7 +34,7 @@ const darkTheme = createTheme({
       fontSize: "3.125rem",
       fontStyle: "normal",
       fontWeight: "600",
-      linHeight: "normal",
+      lineHeight: "normal",
       letterSpacing: "0.15625rem"
     },
     h3: {
@@ -43,7 +43,7 @@ const darkTheme = createTheme({
       fontSize: "2.5rem",
       fontStyle: "normal",
       fontWeight: "600",
-      linHeight: "normal",
+      lineHeight: "normal",
       letterSpacing: "0.125rem"
     },
     h4: {
@@ -52,7 +52,7 @@ const darkTheme = createTheme({
       fontSize: "2.1875rem",
       fontStyle: "normal",
       fontWeight: "500",
-      linHeight: "normal",
+      lineHeight: "normal",
       letterSpacing: "0.10938rem"
     },
     text: {
@@ -61,7 +61,7 @@ const darkTheme = createTheme({
       fontSize: "1.1875rem",
       fontStyle: "normal",
       fontWeight: "400",
-      linHeight: "normal",
+      lineHeight: "normal",
       letterSpacing: "0.09375rem"
     },
     navLinks: {
@@ -70,17 +70,39 @@ const darkTheme = createTheme({
       fontSize: "1.25rem",
       fontStyle: "normal",
       fontWeight: "500",
-      linHeight: "normal",
-      letterSpacing: "0.0625rem"
+      lineHeight: "normal",
+      letterSpacing: "0.0625rem",
+      textDecoration: "none"
     }
   },
   components: {
     MuiBox: {
-      body: {
-        style: {
+      styleOverrides: {
+        mainBody: {
           width: "100%",
           overflowX: "hidden",
-          position: "relative"
+          position: "relative",
+          background: "#050E3B"
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#00A6ED",          
+          color: "#FFFFFF",
+          borderRadius: "0.625rem",
+          boxShadow: "0px 0px 12.439px 0px rgba(0, 0, 0, 0.25)",
+          fontFamily: "Poppins",
+          fontSize: "1.25rem",
+          fontStyle: "normal",
+          fontWeight: "500",
+          lineHeight: "normal",
+          letterSpacing: "0.10938rem",
+          textTransform: "none",
+          "&:hover":{
+            backgroundColor: "#0D1F66",
+          }
         }
       }
     }
