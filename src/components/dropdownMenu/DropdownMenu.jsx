@@ -127,7 +127,7 @@ const DropdownMenu = () => {
             }}
             href="/contact"
           >
-            contact
+            Contact
           </Link>
         </MenuItem>
       </Menu>

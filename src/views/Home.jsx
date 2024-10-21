@@ -1,6 +1,8 @@
 import { Box, Link, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const Home = () => {
+  const theme = useTheme();
   return (
     <Box className="main-body" variant="mainBody">
       <Box
@@ -27,6 +29,29 @@ const Home = () => {
             height: "100%",
             backgroundColor: "rgba(13, 31, 102, 0.65)",
             backdropFilter: "blur(4px)"
+          },
+          [theme.breakpoints.down("md")]: {
+            justifyContent: "center",
+            alignItems: "flex-start",
+            paddingBottom: 0
+          },
+          [theme.breakpoints.down("sm")]: {
+            justifyContent: "center",
+            alignItems: "flex-start",
+            paddingX: 1,
+            paddingY: 0
+          },
+          [theme.breakpoints.down("xs")]: {
+            justifyContent: "center",
+            alignItems: "flex-start",
+            paddingX: 1,
+            paddingY: 0
+          },
+          [theme.breakpoints.down("xxs")]: {
+            justifyContent: "center",
+            alignItems: "flex-start",
+            paddingX: 1,
+            paddingTop: 10
           }
         }}
       >
@@ -37,9 +62,14 @@ const Home = () => {
             padding: 0,
             flexDirection: "column",
             width: "50%",
-            height: "55%",
             zIndex: 1,
-            boxSizing: "border-box"
+            boxSizing: "border-box",
+            [theme.breakpoints.down("md")]: {
+              width: "80%"
+            },
+            [theme.breakpoints.down("sm")]: {
+              width: "100%"
+            }
           }}
         >
           <Typography variant="h1">
@@ -57,11 +87,13 @@ const Home = () => {
             efficiency.
           </Typography>
           <Link
-           className="linkButton"
+            className="linkButton"
             sx={{
               width: "10.625rem",
               height: "3.125rem",
-              padding: 1,
+              display: "flex",
+              justifyContent: "center", // Centrar horizontalmente
+              alignItems: "center",
               backgroundColor: "#00A6ED",
               color: "#FFFFFF",
               borderRadius: "0.625rem",
@@ -74,9 +106,13 @@ const Home = () => {
               letterSpacing: "0.10938rem",
               textTransform: "none",
               textDecoration: "none",
-              textAlign: "center",
               "&:hover": {
                 backgroundColor: "#0D1F66"
+              },
+              [theme.breakpoints.down("sm")]: {
+                width: "8.625rem",
+                height: "2.125rem",
+                fontSize: "1rem"
               }
             }}
           >
