@@ -26,7 +26,13 @@ const darkTheme = createTheme({
       fontSize: "4rem",
       fontStyle: "normal",
       lineHeight: "normal",
-      fontWeight: "600"
+      fontWeight: "600",
+      "@media (max-width: 600px)": {
+        fontSize: "2rem",
+      },
+     "@media (min-width: 600px) and (max-width: 900x)": {
+        fontSize: "3rem",
+      },
     },
     h2: {
       color: "#FFFFFF",
@@ -62,7 +68,13 @@ const darkTheme = createTheme({
       fontStyle: "normal",
       fontWeight: "400",
       lineHeight: "normal",
-      letterSpacing: "0.09375rem"
+      letterSpacing: "0.09375rem",
+      "@media (max-width: 600px)": {
+        fontSize: "0.875rem",
+      },
+     "@media (min-width: 600px) and (max-width: 900x)": {
+        fontSize: "3rem",
+      },
     },
     navLinks: {
       color: "#FFFFFF",
@@ -123,7 +135,8 @@ const darkTheme = createTheme({
   },
   breakpoints: {
     values: {
-      xs: 0,
+      xxs: 321,
+      xs: 376,
       sm: 600,
       md: 900,
       lg: 1200,
