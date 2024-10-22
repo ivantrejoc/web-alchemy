@@ -46,7 +46,7 @@ const darkTheme = createTheme({
     h3: {
       color: "#FFFFFF",
       fontFamily: "Poppins",
-      fontSize: "2.5rem",
+      fontSize: "2.25rem",
       fontStyle: "normal",
       fontWeight: "600",
       lineHeight: "normal",

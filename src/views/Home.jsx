@@ -3,6 +3,10 @@ import { Box, Link, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ivanPhoto from "/img/profile-light-blue.jpg";
+import paulPhoto from "/img/paul-martinez-profile.png";
+import danielaPhoto from "/img/daniela-profile.jpg"
+import developmentPhoto from "/img/website-8305451_1280.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -184,8 +188,7 @@ const Home = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            zIndex: -1,
-            backgroundColor: "plum"
+            zIndex: -1
           }}
         ></Box>
         <Box
@@ -197,20 +200,20 @@ const Home = () => {
             left: 0,
             top: 0,
             paddingX: 10,
-            paddingTop: 15,
+            paddingTop: 20,
             alignItems: "center",
             justifyContent: "center",
+            gap: 1,
             zIndex: 1
           }}
         >
           <Box
             className="about-hero-container"
             sx={{
-              backgroundColor: "orange",
               display: "flex",
               padding: 0,
               flexDirection: "column",
-              width: "40%",
+              width: "55%",
               boxSizing: "border-box",
               [theme.breakpoints.down("md")]: {
                 width: "80%"
@@ -221,20 +224,17 @@ const Home = () => {
             }}
           >
             <Typography variant="h3">ABOUT OUR COMPANY</Typography>
-            <Typography variant="h2">
-              We are committed to providing our clients with exceptional
-              services.
-            </Typography>
+            <Typography variant="h2">Why choose us?</Typography>
             <Typography
               variant="text"
               sx={{
                 marginY: 5
               }}
             >
-              We specialize in creating beautiful and responsive websites and
-              mobile applications. Each line of code is carefully crafted and
-              designed to produce the desired effect with precision and
-              efficiency.
+              Our team of experts specializes in creating top-notch, responsive
+              MVPs. Backed by 10+ years of industry experience, we deliver clean
+              code, elegant design, and a user experience that sets new
+              standards.
             </Typography>
             <Link
               className="linkButton"
@@ -266,17 +266,115 @@ const Home = () => {
                 }
               }}
             >
-              Get started
+              Know more
             </Link>
           </Box>
           <Box
-            className="images-container"
+            className="grid-container"
             sx={{
-              backgroundColor: "cyan",
-              width: "60%",
-              height: "100%"
+              width: "50%",
+              height: "90%",
+              display: "flex",
+              justifySelf: "stretch",
+              alignSelf: "stretch",
+              zIndex: 2,
+              boxSizing: "border-box"
             }}
-          ></Box>
+          >
+            <Box
+              className="images-container"
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: "50%",
+                height: "100%"
+              }}
+            >
+              <Box
+                className="grid-photo"
+                sx={{
+                  display: "flex",
+                  height: "40%",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <Box
+                  className="circle-photo"
+                  sx={{
+                    height: "16.25rem",
+                    width: "16.25rem",
+                    borderRadius: "50%",
+                    background: `url(${danielaPhoto}) lightgray 50% / cover no-repeat`,
+                    backgroundPosition: "center 20%",
+                    boxShadow:
+                      "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30)",
+                    boxSizing: "border-box"
+                  }}
+                ></Box>
+              </Box>
+              <Box
+                className="grid-photo"
+                sx={{
+                  flexShrink: 0,
+                  height: "60%",
+                  borderRadius: "0rem 0rem 0rem 10.49575rem",
+                  background: `url(${paulPhoto}) lightgray 50% / cover no-repeat`,
+                  boxShadow:
+                    "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30);",
+                 
+                  backgroundPosition: "right 100% top",
+                  boxSizing: "border-box"
+                }}
+              ></Box>
+            </Box>
+            <Box
+              className="images-container"
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: "50%",
+                height: "100%",
+                boxSizing: "border-box"
+              }}
+            >
+              <Box
+                className="grid-photo"
+                sx={{
+                  flexShrink: 0,
+                  height: "60%",
+                  borderRadius: "0rem 10.49575rem 0rem 0rem",
+                  background: `url(${ivanPhoto}) lightgray 50% / cover no-repeat`,
+                  boxShadow:
+                    "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30);",
+                  boxSizing: "border-box"
+                }}
+              ></Box>
+              <Box
+                className="grid-photo"
+                sx={{
+                  flexShrink: 0,
+                  height: "40%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center"
+                }}
+              >
+                <Box
+                  className="circle-photo"
+                  sx={{
+                    height: "16.25rem",
+                    width: "16.25rem",
+                    borderRadius: "50%",
+                    background: `url(${developmentPhoto}) lightgray 50% / cover no-repeat`,
+                    boxShadow:
+                      "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30)",
+                    boxSizing: "border-box"
+                  }}
+                ></Box>
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>

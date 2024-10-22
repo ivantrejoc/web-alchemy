@@ -2,6 +2,7 @@ import { Box, Link, Paper, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useLocation } from "react-router-dom";
 import DropdownMenu from "../dropdownMenu/DropdownMenu";
+import logo from "/img/webalchemy-04-small-white.png";
 
 const Header = () => {
   const theme = useTheme();
@@ -43,15 +44,19 @@ const Header = () => {
             className="logo-container"
             sx={{
               width: "15%",
-              height: "100%",
+              height: "90%",
               padding: 0,
               boxSizing: "border-box"
             }}
           >
             <img
-              src="/img/web-alchemy-horizontal-white-logo.png"
-              alt="web-alchemy-logo"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              src={logo}
+              alt="web-alchemy-logo-white"
+              style={{
+                width: "100%", 
+                height: "100%", 
+                objectFit: "scale-down" 
+              }}
             />
           </Box>
           <Box
@@ -173,7 +178,7 @@ const Header = () => {
                 width: "10.625rem",
                 height: "3.125rem",
                 display: "flex",
-                justifyContent: "center", 
+                justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "#00A6ED",
                 color: "#FFFFFF",
@@ -229,7 +234,7 @@ const Header = () => {
             }}
           >
             <img
-              src="/img/web-alchemy-horizontal-white-logo.png"
+              src={logo}
               alt="web-alchemy-logo"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
