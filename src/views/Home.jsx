@@ -9,7 +9,12 @@ import ivanPhoto from "/img/profile-light-blue.jpg";
 import paulPhoto from "/img/paul-martinez-profile-2.jpg";
 import danielaPhoto from "/img/daniela-profile.jpg";
 import developmentPhoto from "/img/website-8305451_1280.jpg";
+import laptopCoding from "/img/icons8-laptop-coding-96.png";
+import mobileApplication from "/img/icons8-iphone-14-96.png";
+import wordpressSite from "/img/icons8-wordpress-96.png";
+import uxDesign from "/img/icons8-pen-96.png";
 import CountUp from "react-countup";
+import ServiceCard from "../components/serviceCard/ServiceCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -54,6 +59,41 @@ const Home = () => {
     threshold: 1
   });
 
+  const services = [
+    {
+      id: 1,
+      icon: laptopCoding,
+      title: "Web Development",
+      description:
+        "Developing web based industrial applications using front-end and back-end technologies.",
+      link: "/services#web-dev"
+    },
+    {
+      id: 2,
+      icon: mobileApplication,
+      title: "Mobile Applications",
+      description:
+        "We craft native mobile apps to iOS and Android devices with clean, robust and scalable structure.",
+      link: "/services#web-dev"
+    },
+    {
+      id: 3,
+      icon: wordpressSite,
+      title: "WordPress Sites",
+      description:
+        "We create beautiful, high-performing and highly-customizable WordPress sites that drive traffic and grow your business.",
+      link: "/services#web-dev"
+    },
+    {
+      id: 4,
+      icon: uxDesign,
+      title: "UX/UI Design",
+      description:
+        "Creating designs that are both functional and enjoyable putting user experience first.",
+      link: "/services#web-dev"
+    }
+  ];
+
   return (
     <Box className="main-body" variant="mainBody">
       <Box
@@ -62,6 +102,7 @@ const Home = () => {
         sx={{
           width: "100%",
           height: "100vh",
+          maxHeight: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
@@ -186,11 +227,34 @@ const Home = () => {
         className="section"
         sx={{
           width: "100%",
-          height: "100vh",
+          height: "110vh",
+          maxHeight: "110vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          position: "relative"
+          position: "relative",
+          paddingX: 10,
+          paddingTop: 0,
+          [theme.breakpoints.down("md")]: {
+            justifyContent: "center",
+            alignItems: "center",
+            paddingLeft: 0,
+            paddingTop: 0
+          },
+          [theme.breakpoints.down("sm")]: {
+            paddingX: 1,
+            paddingTop: 10
+          },
+          [theme.breakpoints.down("xs")]: {
+            justifyContent: "center",
+            alignItems: "flex-start",
+            paddingX: 0,
+            paddingTop: 20
+          },
+          [theme.breakpoints.down("xxs")]: {
+            paddingX: 0,
+            paddingTop: 10
+          }
         }}
       >
         <Box
@@ -202,7 +266,22 @@ const Home = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            zIndex: -1
+            zIndex: -1,
+            backgroundImage:
+              "url('/img/vecteezy_cyber-network-protection-future-technology-background_.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(13, 31, 102, 0.65)",
+              backdropFilter: "blur(2px)"
+            }
           }}
         ></Box>
         <Box
@@ -210,13 +289,14 @@ const Home = () => {
           sx={{
             width: "100%",
             height: "100%",
+            maxHeight: "100%",
             display: "flex",
             left: 0,
             top: 0,
-            paddingX: 10,
-            paddingTop: 20,
-            alignItems: "flex-start",
+
+            alignItems: "center",
             justifyContent: "center",
+            paddingTop: 15,
             gap: 1,
             zIndex: 1,
             [theme.breakpoints.down("md")]: {
@@ -592,6 +672,124 @@ const Home = () => {
           )}
 
           {isMobile && <ImagesStripe />}
+        </Box>
+      </Box>
+      <Box
+        ref={(el) => (sectionRefs.current[2] = el)}
+        className="section"
+        sx={{
+          width: "100%",
+          height: "100vh",
+          maxHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          position: "relative",
+          paddingX: 10,
+          paddingTop: 0,
+          [theme.breakpoints.down("md")]: {
+            justifyContent: "center",
+            alignItems: "center",
+            paddingLeft: 0,
+            paddingTop: 0
+          },
+          [theme.breakpoints.down("sm")]: {
+            paddingX: 1,
+            paddingTop: 10
+          },
+          [theme.breakpoints.down("xs")]: {
+            justifyContent: "center",
+            alignItems: "flex-start",
+            paddingX: 0,
+            paddingTop: 20
+          },
+          [theme.breakpoints.down("xxs")]: {
+            paddingX: 0,
+            paddingTop: 10
+          }
+        }}
+      >
+        <Box
+          ref={(el) => (backgroundRefs.current[2] = el)}
+          className="bg"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            maxHeight: "100%",
+            overflow: "hidden",
+            zIndex: -1
+          }}
+        ></Box>
+        <Box
+          className="content"
+          sx={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            left: 0,
+            top: 0,
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 1,
+            zIndex: 1,
+            [theme.breakpoints.down("md")]: {
+              flexDirection: "column",
+              paddingX: 2,
+              alignItems: "center",
+              justifyContent: "space-evenly",
+              gap: 10
+            },
+            [theme.breakpoints.down("sm")]: {
+              paddingX: 2,
+              paddingTop: 18,
+              justifyContent: "center",
+              gap: 2
+            },
+            [theme.breakpoints.down("xs")]: {
+              paddingX: 1,
+              paddingTop: 15
+            }
+          }}
+        >
+          <Box
+            className="services-container"
+            sx={{
+              width: "100%",
+              height: "70%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: 5,
+              padding: 0
+            }}
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                textAlign: "start"
+              }}
+            >
+              Our Services
+            </Typography>
+            <Box
+              className="services-area"
+              sx={{
+                display: "flex",
+                width: "100%",
+                height: "70%",
+                alignItems: "center",
+                justifyContent: "space-between"
+              }}
+            >
+              {services?.map((service) => (
+                <ServiceCard key={service.id} {...service} />
+              ))}
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>

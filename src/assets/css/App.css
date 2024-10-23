@@ -48,6 +48,12 @@ body {
   color: #00a6ed;
 }
 
+.service-icon{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 900px) {
   .burger-icon {
     width: 80px;
