@@ -53,9 +53,9 @@ const Header = () => {
               src={logo}
               alt="web-alchemy-logo-white"
               style={{
-                width: "100%", 
-                height: "100%", 
-                objectFit: "scale-down" 
+                width: "100%",
+                height: "100%",
+                objectFit: "contain"
               }}
             />
           </Box>
@@ -211,16 +211,21 @@ const Header = () => {
             width: "98%",
             height: "85%",
             display: "flex",
-            justifyContent: "space-between",
-            paddingX: 5,
-            gap: 15,
+            justifyContent: "space-evenly",
             alignItems: "center",
-            flexShrink: "0",
+            paddingX: 4,
+            paddingY: 1,
+            gap: 30,
             background: "rgba(153, 153, 153, 0.30)",
             backdrodfilter: "blur(7.5px)",
             borderRadius: "25px",
-            [theme.breakpoints.between("sm", "md")]: {
-              gap: 50
+            [theme.breakpoints.down("sm")]: {
+              paddingX: 5,
+              gap: 10
+            },
+            [theme.breakpoints.down("xs")]: {
+              paddingX: 1,
+              gap: 5
             }
           }}
         >
@@ -230,22 +235,35 @@ const Header = () => {
               width: "80%",
               height: "100%",
               padding: 0,
-              boxSizing: "border-box"
+              boxSizing: "border-box",
+              [theme.breakpoints.down("sm")]: {
+                width: "70%"
+              },
+              [theme.breakpoints.down("xs")]: {
+                width: "50%"
+              }
             }}
           >
             <img
               src={logo}
-              alt="web-alchemy-logo"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              alt="web-alchemy-logo-white"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain"
+              }}
             />
           </Box>
           <Box
             className="nav-links-container"
             sx={{
-              width: "40%",
+              width: "20%",
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between"
+              justifyContent: "center",
+              [theme.breakpoints.down("sm")]: {
+                width: "20%"
+              }
             }}
           >
             <DropdownMenu />

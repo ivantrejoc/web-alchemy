@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ivanPhoto from "/img/profile-light-blue.jpg";
 import paulPhoto from "/img/paul-martinez-profile.png";
-import danielaPhoto from "/img/daniela-profile.jpg"
+import danielaPhoto from "/img/daniela-profile.jpg";
 import developmentPhoto from "/img/website-8305451_1280.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +72,12 @@ const Home = () => {
           [theme.breakpoints.down("xs")]: {
             justifyContent: "center",
             alignItems: "flex-start",
-            paddingX: 0
+            paddingX: 0,
+            paddingTop: 20
+          },
+          [theme.breakpoints.down("xxs")]: {
+            paddingX: 0,
+            paddingTop: 10
           }
         }}
       >
@@ -204,7 +209,20 @@ const Home = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: 1,
-            zIndex: 1
+            zIndex: 1,
+            [theme.breakpoints.down("md")]: {
+              paddingX: 2,
+              paddingTop: 25
+            },
+            [theme.breakpoints.down("sm")]: {
+              flexDirection: "column",
+              paddingX: 1,
+              paddingTop: 15
+            },
+            [theme.breakpoints.down("xs")]: {
+              paddingX: 1,
+              paddingTop: 0
+            }
           }}
         >
           <Box
@@ -216,10 +234,10 @@ const Home = () => {
               width: "55%",
               boxSizing: "border-box",
               [theme.breakpoints.down("md")]: {
-                width: "80%"
+                width: "50%"
               },
               [theme.breakpoints.down("sm")]: {
-                width: "100%"
+                width: "90%"
               }
             }}
           >
@@ -275,10 +293,25 @@ const Home = () => {
               width: "50%",
               height: "90%",
               display: "flex",
-              justifySelf: "stretch",
-              alignSelf: "stretch",
+              justifyContent: "center",
+              alignItems: "center",
               zIndex: 2,
-              boxSizing: "border-box"
+              boxSizing: "border-box",
+              [theme.breakpoints.down("md")]: {
+                height: "60%",
+                width: "50%"
+              },
+              [theme.breakpoints.down("sm")]: {
+                width: "90%",
+                height: "50%"
+              },
+              [theme.breakpoints.down("xs")]: {
+                width: "90%",
+                height: "40%"
+              },
+              [theme.breakpoints.down("xxs")]: {
+                display: "none"
+              }
             }}
           >
             <Box
@@ -296,7 +329,10 @@ const Home = () => {
                   display: "flex",
                   height: "40%",
                   alignItems: "center",
-                  justifyContent: "center"
+                  justifyContent: "center",
+                  [theme.breakpoints.down("md")]: {
+                    height: "50%"
+                  }
                 }}
               >
                 <Box
@@ -309,7 +345,19 @@ const Home = () => {
                     backgroundPosition: "center 20%",
                     boxShadow:
                       "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30)",
-                    boxSizing: "border-box"
+                    boxSizing: "border-box",
+                    [theme.breakpoints.down("md")]: {
+                      height: "12.25rem",
+                      width: "12.25rem"
+                    },
+                    [theme.breakpoints.down("sm")]: {
+                      height: "10.25rem",
+                      width: "10.25rem"
+                    },
+                    [theme.breakpoints.down("xs")]: {
+                      height: "8.25rem",
+                      width: "8.25rem"
+                    }
                   }}
                 ></Box>
               </Box>
@@ -322,9 +370,20 @@ const Home = () => {
                   background: `url(${paulPhoto}) lightgray 50% / cover no-repeat`,
                   boxShadow:
                     "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30);",
-                 
-                  backgroundPosition: "right 100% top",
-                  boxSizing: "border-box"
+                  boxSizing: "border-box",
+                  transform: "scaleX(-1)",
+                  backgroundPosition: "left",
+                  [theme.breakpoints.down("md")]: {
+                    height: "50%",
+                    backgroundPosition: "15% 75%"
+                  },
+                  [theme.breakpoints.down("sm")]: {
+                    borderRadius: "0rem 0rem 3.49575rem 0rem "
+                  },
+                  [theme.breakpoints.down("xs")]: {
+                    height: "50%",
+                    backgroundPosition: "20% 5%"
+                  }
                 }}
               ></Box>
             </Box>
@@ -343,11 +402,19 @@ const Home = () => {
                 sx={{
                   flexShrink: 0,
                   height: "60%",
-                  borderRadius: "0rem 10.49575rem 0rem 0rem",
+                  borderRadius: "0rem 3.49575rem 0rem 0rem",
                   background: `url(${ivanPhoto}) lightgray 50% / cover no-repeat`,
                   boxShadow:
                     "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30);",
-                  boxSizing: "border-box"
+                  boxSizing: "border-box",
+                  [theme.breakpoints.down("md")]: {
+                    height: "50%",
+                    backgroundPosition: "60% 75%"
+                  },
+                  [theme.breakpoints.down("xs")]: {
+                    height: "50%",
+                    backgroundPosition: "20% 5%"
+                  }
                 }}
               ></Box>
               <Box
@@ -357,7 +424,10 @@ const Home = () => {
                   height: "40%",
                   display: "flex",
                   justifyContent: "center",
-                  alignItems: "center"
+                  alignItems: "center",
+                  [theme.breakpoints.down("md")]: {
+                    height: "50%"
+                  }
                 }}
               >
                 <Box
@@ -369,7 +439,19 @@ const Home = () => {
                     background: `url(${developmentPhoto}) lightgray 50% / cover no-repeat`,
                     boxShadow:
                       "0px 0px 17.585px 11.43px rgba(249, 249, 249, 0.30)",
-                    boxSizing: "border-box"
+                    boxSizing: "border-box",
+                    [theme.breakpoints.down("md")]: {
+                      height: "12.25rem",
+                      width: "12.25rem"
+                    },
+                    [theme.breakpoints.down("sm")]: {
+                      height: "10.25rem",
+                      width: "10.25rem"
+                    },
+                    [theme.breakpoints.down("xs")]: {
+                      height: "8.25rem",
+                      width: "8.25rem"
+                    }
                   }}
                 ></Box>
               </Box>
