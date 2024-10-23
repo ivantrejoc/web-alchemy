@@ -27,12 +27,12 @@ const darkTheme = createTheme({
       fontStyle: "normal",
       lineHeight: "normal",
       fontWeight: "600",
-      "@media (max-width: 600px)": {
-        fontSize: "2rem",
-      },
-     "@media (min-width: 600px) and (max-width: 900x)": {
+      "@media (min-width: 600px) and (max-width: 900x)": {
         fontSize: "3rem",
       },
+      "@media (max-width: 600px)": {
+        fontSize: "2rem",
+      },     
     },
     h2: {
       color: "#FFFFFF",
@@ -41,16 +41,28 @@ const darkTheme = createTheme({
       fontStyle: "normal",
       fontWeight: "600",
       lineHeight: "normal",
-      letterSpacing: "0.15625rem"
+      letterSpacing: "0.15625rem",
+      "@media (min-width: 600px) and (max-width: 900x)": {
+        fontSize: "2.125rem",
+      },
+      "@media (max-width: 600px)": {
+        fontSize: "1.125rem",
+      },    
     },
     h3: {
       color: "#FFFFFF",
       fontFamily: "Poppins",
-      fontSize: "2.5rem",
+      fontSize: "2.25rem",
       fontStyle: "normal",
       fontWeight: "600",
       lineHeight: "normal",
-      letterSpacing: "0.125rem"
+      letterSpacing: "0.125rem",
+      "@media (min-width: 600px) and (max-width: 900x)": {
+        fontSize: "1.875rem",
+      },
+      "@media (max-width: 600px)": {
+        fontSize: "1.25rem",
+      },
     },
     h4: {
       color: "#FFFFFF",
@@ -69,12 +81,13 @@ const darkTheme = createTheme({
       fontWeight: "400",
       lineHeight: "normal",
       letterSpacing: "0.09375rem",
+      "@media (min-width: 600px) and (max-width: 900x)": {
+        fontSize: "1rem",
+      },
       "@media (max-width: 600px)": {
         fontSize: "0.875rem",
       },
-     "@media (min-width: 600px) and (max-width: 900x)": {
-        fontSize: "3rem",
-      },
+     
     },
     navLinks: {
       color: "#FFFFFF",

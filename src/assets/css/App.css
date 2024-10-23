@@ -7,14 +7,14 @@
 }
 
 ::-moz-selection {
-  background: #050E3B;
-  color: #050E3B;
+  background: #050e3b;
+  color: #050e3b;
   text-shadow: none;
 }
 
 ::selection {
-  background: #050E3B;
-  color: #050E3B;
+  background: #050e3b;
+  color: #050e3b;
   text-shadow: none;
 }
 
@@ -25,7 +25,7 @@
 
 html {
   margin: 0;
-  padding: 0;  
+  padding: 0;
   overflow: scroll;
   overflow-x: hidden;
   font-size: 16px;
@@ -36,14 +36,34 @@ body {
   transition: all 0.5s ease;
 }
 
-.burger-icon{
+.burger-icon {
   width: 40px;
   height: 40px;
 }
 
-@media (min-width: 600px) and (max-width: 900px){
-  .burger-icon{
+.count-up-counter {
+  font-family: Poppins;
+  font-size: 4rem;
+  font-weight: 500;
+  color: #00a6ed;
+}
+
+@media (max-width: 900px) {
+  .burger-icon {
     width: 80px;
     height: 80px;
+  }
+  .count-up-counter {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .burger-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .count-up-counter {
+    font-size: 2rem;
   }
 }
