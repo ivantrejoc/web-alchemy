@@ -128,10 +128,10 @@ const Header = () => {
             <Typography
               variant="navLinks"
               component="a"
-              href="/technologies"
+              href="/works"
               sx={{
                 color:
-                  location.pathname === "/technologies"
+                  location.pathname === "/works"
                     ? theme.palette.primary.light
                     : "inherit",
                 "&:hover": {
@@ -142,7 +142,7 @@ const Header = () => {
                 }
               }}
             >
-              Technologies
+              Works
             </Typography>
             <Typography
               variant="navLinks"

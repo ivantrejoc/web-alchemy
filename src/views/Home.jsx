@@ -15,6 +15,9 @@ import wordpressSite from "/img/icons8-wordpress-96.png";
 import uxDesign from "/img/icons8-pen-96.png";
 import CountUp from "react-countup";
 import ServiceCard from "../components/serviceCard/ServiceCard";
+import ClientCard from "../components/clientCard/clientCard";
+import WorksSlider from "../components/worksSlider/WorksSlider";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -107,12 +110,56 @@ const Home = () => {
       link: "/services#web-dev"
     }
   ];
+  const clients = [
+    {
+      id: 1,
+      name: "E-commerce",
+      link: "https://wanderlust-phi.vercel.app",
+      imgSrc:
+        "https://i.postimg.cc/d0kJj9Hy/wanderlust-name-removebg-preview.png",
+      alt: "E-commerce",
+      background: "rgba(255, 255, 255, 0.85)"
+    },
+    {
+      id: 2,
+      name: "Proyecto web agricola",
+      link: "https://agroseedservicios.com",
+      imgSrc: "https://i.postimg.cc/qvZkKFLr/agrosed-name-removebg-preview.png",
+      alt: "Proyecto web agricola",
+      background: "#16a34a"
+    },
+    {
+      id: 3,
+      name: "Desarrollo web indumentaria",
+      link: "https://crossing-borders.netlify.app/",
+      imgSrc:
+        "https://i.postimg.cc/Lsc2CZw0/Crossing-borders-removebg-preview.png",
+      alt: "Desarrollo web indumentaria",
+      background: "rgba(255, 255, 255, 0.85)"
+    },
+    {
+      id: 4,
+      name: "Desarrollo de software",
+      link: "https://www.hieloyelito.com/",
+      imgSrc: "https://i.postimg.cc/K8YGRbtQ/Yelito-name-removebg-preview.png",
+      alt: "Desarrollo de software",
+      background: "rgba(255, 255, 255, 0.85)"
+    },
+    {
+      id: 5,
+      name: "catálogo web",
+      link: "https://www.stop.com.ar/",
+      imgSrc: "https://i.postimg.cc/gJ3df2Pc/stop-name-removebg-preview.png",
+      alt: "catálogo web",
+      background: "#dc2626"
+    }
+  ];
 
   return (
     <Box className="main-body" variant="mainBody">
       <Box
         ref={(el) => (sectionRefs.current[0] = el)}
-        className="section"
+        className="main-hero-section"
         sx={{
           width: "100%",
           height: "100vh",
@@ -238,7 +285,7 @@ const Home = () => {
       </Box>
       <Box
         ref={(el) => (sectionRefs.current[1] = el)}
-        className="section"
+        className="about-us-section"
         sx={{
           width: "100%",
           height: "100vh",
@@ -699,7 +746,7 @@ const Home = () => {
       </Box>
       <Box
         ref={(el) => (sectionRefs.current[2] = el)}
-        className="section"
+        className="services-section"
         sx={{
           width: "100%",
           height: "100vh",
@@ -853,6 +900,159 @@ const Home = () => {
                 </Box>
               </Box>
             )}
+          </Box>
+        </Box>
+      </Box>
+      <Box
+        ref={(el) => (sectionRefs.current[3] = el)}
+        className="clients-section"
+        sx={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          paddingX: 10,
+          paddingTop: 0,
+          [theme.breakpoints.down("md")]: {
+            height: "130vh",
+            paddingTop: 25
+          }
+        }}
+      >
+        <Box
+          ref={(el) => (backgroundRefs.current[3] = el)}
+          className="bg"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            backgroundImage:
+              "url('/img/vecteezy_cyber-network-protection-future-technology-background_.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(13, 31, 102, 0.65)",
+              backdropFilter: "blur(2px)"
+            }
+          }}
+        ></Box>
+        <Box
+          className="content"
+          sx={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            left: 0,
+            top: 0,
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: 15,
+            gap: 1,
+            zIndex: 1,
+            [theme.breakpoints.down("md")]: {
+              paddinTop: 20
+            }
+          }}
+        >
+          <Box className="section-container">
+            <Box sx={{ textAlign: "left", marginBottom: 4 }}>
+              <Typography variant="h3">Clients who trust us</Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: "repeat(5, 1fr)",
+                gap: 2,
+                [theme.breakpoints.down("md")]: {
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  gridTemplateRows: "repeat(3, 1fr)"
+                }
+              }}
+            >
+              {clients.map((client) => (
+                <ClientCard
+                  key={client.id}
+                  image={client.imgSrc}
+                  alt={client.alt}
+                  background={client.background}
+                />
+              ))}
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      <Box
+        ref={(el) => (sectionRefs.current[4] = el)}
+        className="works-section"
+        sx={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          paddingX: 10,
+          paddingTop: 20
+        }}
+      >
+        <Box
+          ref={(el) => (backgroundRefs.current[4] = el)}
+          className="bg"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: -1
+          }}
+        ></Box>
+        <Box
+          className="content"
+          sx={{
+            width: "100%",
+            height: "90%",
+            display: "flex",
+            left: 0,
+            top: 0,
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: 5,
+            zIndex: 1
+          }}
+        >
+          <Box
+            className="title-container"
+            sx={{
+              width: "100%"
+            }}
+          >
+            <Typography variant="h2">Our Works</Typography>
+          </Box>
+          <Box
+            className="carousel-container"
+            sx={{
+              // background: "red",
+              width: "100%",
+              height: "60%",
+              display: "flex",
+              alignItems: "center"
+            }}
+          >
+            <WorksSlider />
           </Box>
         </Box>
       </Box>

@@ -2,7 +2,7 @@ import { useRoutes } from "react-router-dom";
 import Home from "../views/Home";
 import About from "../views/About";
 import Contact from "../views/Contact";
-import Technologies from "../views/Technologies";
+import Works from "../views/Works";
 import Services from "../views/Services";
 import NotFound from "../views/Notfound";
 
@@ -17,8 +17,8 @@ function Router() {
       element: <Services />
     },
     {
-      path: "/technologies",
-      element: <Technologies />
+      path: "/works",
+      element: <Works />
     },
     {
       path: "/about",

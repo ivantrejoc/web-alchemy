@@ -109,9 +109,9 @@ const DropdownMenu = () => {
                 color: theme.palette.primary.light
               }
             }}
-            href="/technologies"
+            href="/works"
           >
-            Technologies
+            Works
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>

@@ -49,6 +49,24 @@ body {
   object-fit: cover;
 }
 
+.slider-container {
+  /* background-color: blue; */
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  height: 22rem;
+  width: 22rem;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 900px) {
   .burger-icon {
     width: 80px;
