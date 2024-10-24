@@ -1004,7 +1004,14 @@ const Home = () => {
           justifyContent: "center",
           position: "relative",
           paddingX: 10,
-          paddingTop: 20
+          paddingTop: 20,
+          [theme.breakpoints.down("md")]: {
+            paddingTop: 35
+          },
+          [theme.breakpoints.down("sm")]: {
+            paddingTop: 0,
+            paddingX: 3
+          }
         }}
       >
         <Box
@@ -1031,7 +1038,13 @@ const Home = () => {
             alignItems: "center",
             justifyContent: "flex-start",
             gap: 5,
-            zIndex: 1
+            zIndex: 1,
+            [theme.breakpoints.down("sm")]: {
+              height: "40%"
+            },
+            [theme.breakpoints.down("xxs")]: {
+              height: "50%"
+            }
           }}
         >
           <Box
@@ -1045,7 +1058,6 @@ const Home = () => {
           <Box
             className="carousel-container"
             sx={{
-              // background: "red",
               width: "100%",
               height: "60%",
               display: "flex",

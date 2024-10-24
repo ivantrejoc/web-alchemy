@@ -50,7 +50,6 @@ body {
 }
 
 .slider-container {
-  /* background-color: blue; */
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -84,5 +83,26 @@ body {
   }
   .count-up-counter {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 428px) {
+  .slide {
+    height: 12rem;
+    width: 12rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .slide {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .slide {
+    height: 7rem;
+    width: 7rem;
   }
 }
