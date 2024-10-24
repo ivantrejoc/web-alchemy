@@ -1,12 +1,5 @@
 import { useRef, useLayoutEffect } from "react";
-import {
-  Box,
-  Link,
-  Typography,
-  Paper,
-  useMediaQuery,
-  Grid2
-} from "@mui/material";
+import { Box, Link, Typography, Paper, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -28,6 +21,7 @@ const Home = () => {
   const theme = useTheme();
   const sectionRefs = useRef([]);
   const backgroundRefs = useRef([]);
+  const serviceRef = useRef(null);
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const getRatio = (element) =>
@@ -36,7 +30,6 @@ const Home = () => {
   useLayoutEffect(() => {
     sectionRefs.current.forEach((section, i) => {
       const bg = backgroundRefs.current[i];
-
       gsap.fromTo(
         bg,
         {
@@ -59,6 +52,20 @@ const Home = () => {
         }
       );
     });
+
+    gsap.fromTo(
+      serviceRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: serviceRef.current,
+          start: "top center",
+          end: "bottom top",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
   }, []);
 
   const { ref: countUpRef, inView } = useInView({
@@ -329,7 +336,7 @@ const Home = () => {
               paddingX: 1,
               paddingTop: 5
             },
-            [theme.breakpoints.down("xxs")]: {              
+            [theme.breakpoints.down("xxs")]: {
               paddingTop: 20
             }
           }}
@@ -753,13 +760,14 @@ const Home = () => {
             },
             [theme.breakpoints.down("xs")]: {
               paddingTop: 15
-            },   
+            },
             [theme.breakpoints.down("xxs")]: {
               paddingTop: 5
-            },          
+            }
           }}
         >
           <Box
+            ref={serviceRef}
             className="services-container"
             sx={{
               width: "100%",
@@ -812,6 +820,7 @@ const Home = () => {
                 }}
               >
                 <Box
+                  ref={serviceRef}
                   className="services-container"
                   container
                   sx={{
