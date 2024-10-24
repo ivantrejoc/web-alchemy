@@ -1,5 +1,12 @@
 import { useRef, useLayoutEffect } from "react";
-import { Box, Link, Typography, Paper, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Link,
+  Typography,
+  Paper,
+  useMediaQuery,
+  Grid2
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -227,8 +234,8 @@ const Home = () => {
         className="section"
         sx={{
           width: "100%",
-          height: "110vh",
-          maxHeight: "110vh",
+          height: "100vh",
+          maxHeight: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -238,12 +245,16 @@ const Home = () => {
           [theme.breakpoints.down("md")]: {
             justifyContent: "center",
             alignItems: "center",
-            paddingLeft: 0,
-            paddingTop: 0
+            paddingX: 0,
+            paddingTop: 10,
+            height: "105vh",
+            maxHeight: "105vh"
           },
           [theme.breakpoints.down("sm")]: {
             paddingX: 1,
-            paddingTop: 10
+            paddingTop: 0,
+            height: "130vh",
+            maxHeight: "130vh"
           },
           [theme.breakpoints.down("xs")]: {
             justifyContent: "center",
@@ -253,7 +264,9 @@ const Home = () => {
           },
           [theme.breakpoints.down("xxs")]: {
             paddingX: 0,
-            paddingTop: 10
+            paddingTop: 0,
+            height: "160vh",
+            maxHeight: "160vh"
           }
         }}
       >
@@ -314,7 +327,10 @@ const Home = () => {
             },
             [theme.breakpoints.down("xs")]: {
               paddingX: 1,
-              paddingTop: 15
+              paddingTop: 5
+            },
+            [theme.breakpoints.down("xxs")]: {              
+              paddingTop: 20
             }
           }}
         >
@@ -433,7 +449,7 @@ const Home = () => {
                   justifyContent: "center",
                   flexShrink: "0",
                   padding: 1,
-                  background: "rgba(255, 255, 255, 0.90)",
+                  background: "rgba(255, 255, 255, 0.85)",
                   backdrodfilter: "blur(7.5px)",
                   borderRadius: "25px",
                   [theme.breakpoints.down("md")]: {
@@ -683,29 +699,21 @@ const Home = () => {
           maxHeight: "100vh",
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-start",
+          justifyContent: "center",
           position: "relative",
           paddingX: 10,
           paddingTop: 0,
           [theme.breakpoints.down("md")]: {
-            justifyContent: "center",
-            alignItems: "center",
-            paddingLeft: 0,
+            paddingX: 0,
             paddingTop: 0
           },
           [theme.breakpoints.down("sm")]: {
-            paddingX: 1,
-            paddingTop: 10
-          },
-          [theme.breakpoints.down("xs")]: {
-            justifyContent: "center",
-            alignItems: "flex-start",
-            paddingX: 0,
-            paddingTop: 20
+            height: "190vh",
+            maxHeight: "190vh"
           },
           [theme.breakpoints.down("xxs")]: {
-            paddingX: 0,
-            paddingTop: 10
+            height: "250vh",
+            maxHeight: "250vh"
           }
         }}
       >
@@ -729,6 +737,7 @@ const Home = () => {
             width: "100%",
             height: "100%",
             display: "flex",
+            flex: 1,
             left: 0,
             top: 0,
             alignItems: "center",
@@ -736,22 +745,18 @@ const Home = () => {
             gap: 1,
             zIndex: 1,
             [theme.breakpoints.down("md")]: {
-              flexDirection: "column",
               paddingX: 2,
-              alignItems: "center",
-              justifyContent: "space-evenly",
-              gap: 10
+              paddingTop: 20
             },
             [theme.breakpoints.down("sm")]: {
-              paddingX: 2,
-              paddingTop: 18,
-              justifyContent: "center",
-              gap: 2
+              paddingTop: 0
             },
             [theme.breakpoints.down("xs")]: {
-              paddingX: 1,
               paddingTop: 15
-            }
+            },   
+            [theme.breakpoints.down("xxs")]: {
+              paddingTop: 5
+            },          
           }}
         >
           <Box
@@ -764,7 +769,10 @@ const Home = () => {
               alignItems: "flex-start",
               justifyContent: "center",
               gap: 5,
-              padding: 0
+              padding: 0,
+              [theme.breakpoints.down("md")]: {
+                height: "90%"
+              }
             }}
           >
             <Typography
@@ -775,20 +783,67 @@ const Home = () => {
             >
               Our Services
             </Typography>
-            <Box
-              className="services-area"
-              sx={{
-                display: "flex",
-                width: "100%",
-                height: "70%",
-                alignItems: "center",
-                justifyContent: "space-between"
-              }}
-            >
-              {services?.map((service) => (
-                <ServiceCard key={service.id} {...service} />
-              ))}
-            </Box>
+            {!isMobile && (
+              <Box
+                className="services-area"
+                sx={{
+                  display: "flex",
+                  width: "100%",
+                  height: "70%",
+                  alignItems: "center",
+                  justifyContent: "space-between"
+                }}
+              >
+                {services?.map((service) => (
+                  <ServiceCard key={service.id} {...service} />
+                ))}
+              </Box>
+            )}
+
+            {isMobile && (
+              <Box
+                className="services-area"
+                sx={{
+                  display: "flex",
+                  width: "100%",
+                  height: "90%",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <Box
+                  className="services-container"
+                  container
+                  sx={{
+                    height: "100%",
+                    width: "100%",
+                    display: "grid",
+                    gridTemplateRows: "repeat(2, 1fr)",
+                    gridTemplateColumns: "repeat(2, 1fr)",
+                    gap: 2,
+                    [theme.breakpoints.down("sm")]: {
+                      display: "flex",
+                      flexDirection: "column"
+                    }
+                  }}
+                >
+                  {services?.map((service) => (
+                    <Box
+                      key={service.id}
+                      sx={{
+                        width: "100%",
+                        height: "100%",
+                        [theme.breakpoints.down("sm")]: {
+                          height: "25%"
+                        }
+                      }}
+                    >
+                      <ServiceCard key={service.id} {...service} />
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+            )}
           </Box>
         </Box>
       </Box>
